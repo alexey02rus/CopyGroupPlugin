@@ -24,7 +24,7 @@ namespace CopyGroupPlugin
             Element element = doc.GetElement(reference);
             Group group = element as Group;
             XYZ point = uiDoc.Selection.PickPoint("Выберите точку");
-             using(Transaction ts = new Transaction(doc, "Копирование группы"))
+            using(Transaction ts = new Transaction(doc, "Копирование группы"))
             {
                 ts.Start();
                 doc.Create.PlaceGroup(point, group.GroupType);
